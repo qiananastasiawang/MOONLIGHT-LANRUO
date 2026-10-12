@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOONLIGHT LANRUO</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f6f8;
+  color: #222;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 24px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 6px;
+}
+
+.question {
+  margin: 16px 0;
+}
+
+.question input,
+#businessName {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 12px;
+  font-size: 17px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#addQuestion {
+  background: #eeeeee;
+  color: #111;
+}
+
+#createForm {
+  background: #111;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>MOONLIGHT LANRUO</h1>
+  <p>Create the questions you want to ask your customers.</p>
+
+  <div class="card">
+
+    <label><strong>Business Name</strong></label>
+    <input id="businessName" placeholder="Your business name">
+
+    <h2>Your Questions</h2>
+
+    <div id="questions">
+      <div class="question">
+        <input placeholder="Question 1">
+      </div>
+    </div>
+
+    <button id="addQuestion" type="button">
+      + Add Question
+    </button>
+
+    <button id="createForm" type="button">
+      Create Customer Form
+    </button>
+
+  </div>
+</div>
+
+<script>
+var questionNumber = 1;
+
+document.getElementById("addQuestion").onclick = function () {
+
+  questionNumber++;
+
+  var div = document.createElement("div");
+  div.className = "question";
+
+  var input = document.createElement("input");
+  input.placeholder = "Question " + questionNumber;
+
+  div.appendChild(input);
+
+  document.getElementById("questions").appendChild(div);
+};
+
+document.getElementById("createForm").onclick = function () {
+  alert("Customer Form creation works!");
+};
+</script>
+
+</body>
+</html>
